@@ -3,7 +3,7 @@ import { Container, Row, Col } from "reactstrap";
 import ModalForm from "./Components/Modals/Modal";
 import DataTable from "./Components/Tables/DataTable";
 import { CSVLink } from "react-csv";
-
+import {FcTodoList} from 'react-icons/fc'
 function App(props) {
   const [items, setItems] = useState([ ]);
 
@@ -41,7 +41,7 @@ function App(props) {
     <Container className="App">
       <Row>
         <Col>
-          <h1 style={{ margin: "20px 0" }}>ToDoList modal</h1>
+          <h1 className="m-4 text-success"><FcTodoList /> List</h1>
         </Col>
       </Row>
       <Row>

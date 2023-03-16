@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody } from "reactstrap";
 import AddEditForm from "../Forms/FormAddEdit";
+import { FaBeer } from "@react-icons/all-files/fa/FaBeer";
 
 function ModalForm(props) {
   const [modal, setModal] = useState(false);
@@ -19,7 +20,7 @@ function ModalForm(props) {
   let button = "";
   let title = "";
 
-  if (label === "Edit") {
+  if (label === "Tahrirlash") {
     button = (
       <Button
         color="warning"
@@ -29,18 +30,18 @@ function ModalForm(props) {
         {label}
       </Button>
     );
-    title = "Edit Item";
+    title = "Elementni tahrirlash";
   } else {
     button = (
       <Button
-        color="success"
+        color="primary"
         onClick={toggle}
-        style={{ float: "left", marginRight: "10px" }}
+        style={{ float: "left", marginRight: "10px"}}
       >
         {label}
       </Button>
     );
-    title = "Add New Item";
+    title = "Yangi element qo'shish";
   }
 
   return (
@@ -53,11 +54,11 @@ function ModalForm(props) {
         backdrop={"static"}
         keyboard={false}
       >
-        <ModalHeader toggle={toggle} close={closeBtn}>
+        <ModalHeader toggle={toggle}>
           {title}
         </ModalHeader>
         <ModalBody>
-          <AddEditForm
+          <AddEditForm  
             addItemToState={props.addItemToState}
             updateState={props.updateState}
             toggle={toggle}

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Table, Button } from 'reactstrap';
 import ModalForm from '../Modals/Modal'
+import { BsFillTrash3Fill } from "react-icons/bs";
+import { BsFillPersonBadgeFill } from "react-icons/bs";
 
 function DataTable(props){
   const deleteItem = id => {
@@ -35,9 +37,8 @@ function DataTable(props){
         <td>{item.hobby}</td>
         <td>
           <div style={{width:"110px"}}>
-            <ModalForm buttonLabel="Edit" item={item} updateState={props.updateState}/>
-            {' '}
-            <Button color="danger" onClick={() => deleteItem(item.id)}>Del</Button>
+            <ModalForm buttonLabel="Tahrirlash" item={item} updateState={props.updateState}/>
+            <Button className='mx-2 px-4' color="danger" onClick={() => deleteItem(item.id)}> <BsFillTrash3Fill /></Button>
           </div>
         </td>
       </tr>
@@ -47,8 +48,8 @@ function DataTable(props){
   return (
     <Table responsive hover>
       <thead>
-        <tr>
-          <th>ID</th>
+        <tr className='text-success'>
+          <th><BsFillPersonBadgeFill/></th>
           <th>Ism</th>
           <th>Familya</th>
           <th>Elektron pochta</th>
